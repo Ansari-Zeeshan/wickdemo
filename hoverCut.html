@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Cut</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center
+    }
+    .main{
+      height: 90vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family: 'poppins', sans-serif;
+    }
+    nav li{
+      display: inline-block;
+      margin: 10px 25px;
+    }
+    nav a{
+      font-size: 40px;
+      text-decoration: none;
+      color: hsl(0, 50%, 60%);
+      text-transform: capitalize;
+      line-height: 1.2;
+    }
+    nav .word{
+      display: inline-flex;
+      overflow: hidden;
+    }
+    nav .char{
+      position: relative;
+      transition: transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4);
+      transition-delay: calc(0.02s * var(--i));
+    }
+    nav a:hover .char{
+      transform: translateY(-100%);
+    }
+    nav .char::after{
+      content: attr(data-text);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      color: hsl(247, 41%, 67%);
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">What we do</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    function menuAnimation(){
+       const navLi = document.querySelectorAll('nav li');
+
+       navLi.forEach(li => {
+        let a = li.querySelector('a');
+        let text = a.innerText;
+        let words = text.split(' ');
+        let wordsArr = [];
+        let chars = 0;
+        a.innerHTML = '';
+
+        words.forEach(word => {
+          let html = '';
+          [...word].forEach(char=>{
+            html += `<span class="char" data-text='${char}' style="--i: ${chars}">${char}</span>`;
+            chars++;
+          })
+          wordsArr.push(`<span class="word">${html}</span>`)
+        });
+        a.innerHTML=wordsArr.join(' ');
+       });
+    }
+    menuAnimation()
+  </script>
+</body>
+</html>
