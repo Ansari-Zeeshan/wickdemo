@@ -607,14 +607,21 @@ header{
   min-height: 100vh;
   @include flexC;
   .left-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4.5rem 0 0 3.7rem;
     h3,h4{
       width: 60%;
-      font-size: 2.5rem;
-      line-height: 1.6;
+      font-size: 2.8rem;
+      line-height: 1.5;
       color: $secondary-color;
-      letter-spacing: -0.09rem;
+      letter-spacing: -0.04rem;
       word-spacing: 0.1rem;
-      font-family: Mont-semibold;
+    }
+    h3{
+      font-family: Mont-bold;
     }
     h4{
       font-family: Mont-norm;
@@ -630,14 +637,77 @@ header{
       height: 281px;
       background: #FDF0E5;
       border-radius: 25px;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      .img-div{
+        width: 70%;
+        height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 0;
+        }
+      }
     }
     .rec2{
       position: absolute;
-      top: 130px;
+      top: 197px;
+      left: 2.9%;
       width: 170px;
       height: 120px;
       background-color: #005AFD;
       border-radius: 25px;
+      z-index: 6;
+      overflow: hidden;
+      @include flexC;
+      .img-div{
+        width: 80%;
+        height: 100%;
+        padding-top: 1.5rem;
+        img{
+          width: 100%;
+          height: 140%;
+          object-fit: cover;
+          transform: rotate(-47deg);
+          object-position: center 0;
+          margin-top: -0.3rem;
+          margin-left: 0.6rem;
+
+        }
+      }
+    }
+    .circ1{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #53C3FF;
+      border-radius: 50%;
+      top: 220px;
+      right: 24%;
+      z-index: 2;
+    }
+    .circ2{
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      background-color: #FF5E00;
+      border-radius: 50%;
+      top: 38px;
+      left: 12.1%;
+      z-index: 6;
+    }
+    .circ3{
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: #FD9400;
+      border-radius: 50%;
+      top: 150px;
+      left: 8%;
+      z-index: 3;
     }
   }
 }
