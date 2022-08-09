@@ -1,5 +1,6 @@
 const section2 = document.querySelector('.section2');
-const s2img = document.querySelectorAll('.section2 .img');
+const s2imgdiv = document.querySelectorAll('.section2 .img');
+const s2con = document.querySelector('.section2 .content');
 
 //confetti falling
 var confettiSettings = { 
@@ -19,7 +20,7 @@ confetti.render();
 gsap.registerPlugin(ScrollTrigger);
 
 let mbtl = gsap.timeline({defaults: {ease: 'linear'}});
-mbtl.to('.banner .mobile .mobile-back', {duration: 8, x: -55, rotate: -33})
+mbtl.to('.banner .mobile .mobile-back', {duration: 8, x: -58, rotate: -29})
 mbtl.to('.banner .mobile', {duration: 2, y: -140})
 
 ScrollTrigger.create({
@@ -53,24 +54,21 @@ section2.addEventListener('mousemove', moveSection2);
 
 function moveSection2(e){
   e.stopPropagation();
-  s2img.forEach((img)=>{
-    let move_value = img.getAttribute('data-speed');
-    let x = (e.clientX * move_value)/250;
-    let y = (e.clientY * move_value)/250;
-    img.style.transform = `translate(${x}px, ${y}px)`
-  })
+    let move_value = s2con.getAttribute('data-speed');
+    let x = (e.clientX * move_value)/150;
+    let y = (e.clientY * move_value)/150;
+    s2con.style.transform = `translate(${x}px, ${y}px) rotateY(${y - 10}deg)`
 }
 
-s2img.forEach(function(img){
+s2imgdiv.forEach(function(img){
   img.addEventListener('mousemove', function (e){
     let position = this.getBoundingClientRect();
     let x = e.clientX - position.left - position.width / 2;
     let y = e.clientY - position.top - position.height / 2;
-    console.log(`${x} and ${y}`);
-    this.style.transform = `translate(${x*9}px, ${y*9}px)`;
+    this.style.transform = `translate(${x*7.5}px, ${y*7.5}px)`;
   })
 
   img.addEventListener('mouseout',function (){
     this.style.transform = `translate(0px, 0px)`;
-  })
+  }) 
 });

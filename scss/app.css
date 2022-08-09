@@ -326,6 +326,7 @@ header nav ul li:not(:last-child) {
   position: absolute;
   width: 38px;
   height: 38px;
+  z-index: 10;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
@@ -337,6 +338,8 @@ header nav ul li:not(:last-child) {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .section2 .content .img1 {

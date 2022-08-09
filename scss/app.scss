@@ -262,12 +262,14 @@ header{
       position: absolute;
       width: 38px;
       height: 38px;
+      z-index: 10;
       transition: all 1s ease-out;
       img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transition: all 0.2s ease;
       }
     }
     .img1{
