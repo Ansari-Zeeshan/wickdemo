@@ -164,7 +164,8 @@ header{
 }
 // banner css start
 .banner{
-  min-height: 100vh;
+  min-height: 85vh;
+  position: relative;
   .banner-text{
     height: 65vh;
     display: flex;
@@ -181,20 +182,20 @@ header{
     }
   }
   .mobile{
-    margin-top: 3rem;
+    margin-top: 14rem;
     display: flex;
     justify-content: center;
     position: relative;
     .mobile-back{
       position: absolute;
-      left: 33%;
-      top: 18%;
-      width: 210px;
+      left: 40%;
+      top: 14%;
+      width: 170px;
       height: 350px;
       border-radius: 30px;
       background-color: #005FFF;
       z-index: -1;
-      transform: rotate(-26deg);
+      // transform: rotate(-26deg);
     }
     .mobile-front{
       margin-left: 15rem;
@@ -217,6 +218,14 @@ header{
       }
     }
   }
+  #confetti{
+    position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -5;
+  }
 }
 // banner css end
 
@@ -226,6 +235,7 @@ header{
   background: #fdf0e5;
   min-height: 100vh;
   @include flexC;
+  transition: all 0.3s ease;
   .content{
     @include flexC;
     flex-direction: column;
@@ -252,6 +262,7 @@ header{
       position: absolute;
       width: 38px;
       height: 38px;
+      transition: all 1s ease-out;
       img{
         width: 100%;
         height: 100%;
