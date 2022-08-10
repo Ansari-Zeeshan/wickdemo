@@ -113,6 +113,46 @@ ul{
 	align-items: center;
 }
 
+// btn animation
+.btn-type{
+  width: 162px;
+  padding: 1.7rem;
+  background: #fff;
+  border-radius: 17px;
+  color: $font-color;
+  border: 1px solid #ADCBFF;
+  font-size: 1.6rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    .char{
+      transform: translateY(-100%);
+    }
+  }
+  a{
+    text-decoration: none;
+    font-family: 'Mont-semibold';
+  }
+  .word{
+    display: inline-flex;
+    overflow: hidden;
+  }
+  .char{
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4);
+    transition-delay: calc(0.02s * var(--i));
+    &::after{
+      content: attr(data-text);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      color: $font-color;
+    }
+  }
+}
+
 header{
   position: fixed;
   top: 0;
@@ -186,6 +226,7 @@ header{
     display: flex;
     justify-content: center;
     position: relative;
+    transition: all 0.3s ease;
     .mobile-back{
       position: absolute;
       left: 40%;
@@ -195,6 +236,7 @@ header{
       border-radius: 30px;
       background-color: #005FFF;
       z-index: -1;
+      transition: all 0.2s ease;
       // transform: rotate(-26deg);
     }
     .mobile-front{
@@ -263,7 +305,7 @@ header{
       width: 38px;
       height: 38px;
       z-index: 10;
-      transition: all 1s ease-out;
+      transition: all 0.7s ease-out;
       img{
         width: 100%;
         height: 100%;
@@ -311,6 +353,7 @@ header{
 // section 3 css start
 .section3{
   min-height: 100vh;
+  background-color: #fff;
   @include flexC;
   .scroll-div{
     display: flex;
@@ -332,6 +375,25 @@ header{
         width: 66%;
         margin: auto;
       }
+    }
+  }
+  .gif-div{
+    position: absolute;
+    pointer-events: none;
+    top: -150px;
+		left: -150px;
+    width: 250px;
+    mix-blend-mode: normal;
+    height: 350px;
+    border-radius: 30px;
+    transform: scale(0.3);
+    visibility: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: inherit;
     }
   }
 }
@@ -376,16 +438,6 @@ header{
       line-height: 1.6;
       width: 63%;
     }
-    button{
-      width: 160px;
-      padding: 16px;
-      background: #fff;
-      border-radius: 15px;
-      color: $font-color;
-      border: 1px solid silver;
-      font-size: 1.6rem;
-      font-family: 'Mont-semibold';
-    }
   }
 }
 // section 4 css end
@@ -399,6 +451,7 @@ header{
     @include flexC;
     margin-top: 5.3rem;
     position: relative;
+    transition: all 0.2s ease;
     h1{
       font-size: 7rem;
       letter-spacing: -5px;
@@ -414,6 +467,7 @@ header{
       width: 50px;
       height: 50px;
       position: absolute;
+      transition: all 0.7s ease-out;
       img{
         width: 100%;
         height: 100%;

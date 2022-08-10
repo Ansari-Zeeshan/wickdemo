@@ -118,6 +118,61 @@ ul {
   font-size: 15px;
 }
 
+.btn-type {
+  width: 162px;
+  padding: 1.7rem;
+  background: #fff;
+  border-radius: 17px;
+  color: #005FFF;
+  border: 1px solid #ADCBFF;
+  font-size: 1.6rem;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-type:hover .char {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.btn-type a {
+  text-decoration: none;
+  font-family: 'Mont-semibold';
+}
+
+.btn-type .word {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.btn-type .char {
+  position: relative;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4);
+  transition: -webkit-transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4);
+  transition: transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4);
+  transition: transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4), -webkit-transform 0.5s cubic-bezier(0.27, 0.68, 0.25, 1.4);
+  -webkit-transition-delay: calc(0.02s * var(--i));
+          transition-delay: calc(0.02s * var(--i));
+}
+
+.btn-type .char::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #005FFF;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -221,6 +276,8 @@ header nav ul li:not(:last-child) {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .banner .mobile .mobile-back {
@@ -232,6 +289,8 @@ header nav ul li:not(:last-child) {
   border-radius: 30px;
   background-color: #005FFF;
   z-index: -1;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .banner .mobile .mobile-front {
@@ -327,8 +386,8 @@ header nav ul li:not(:last-child) {
   width: 38px;
   height: 38px;
   z-index: 10;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .section2 .content .img img {
@@ -384,6 +443,7 @@ header nav ul li:not(:last-child) {
 
 .section3 {
   min-height: 100vh;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -427,6 +487,30 @@ header nav ul li:not(:last-child) {
   font-weight: 600;
   width: 66%;
   margin: auto;
+}
+
+.section3 .gif-div {
+  position: absolute;
+  pointer-events: none;
+  top: -150px;
+  left: -150px;
+  width: 250px;
+  mix-blend-mode: normal;
+  height: 350px;
+  border-radius: 30px;
+  -webkit-transform: scale(0.3);
+          transform: scale(0.3);
+  visibility: hidden;
+}
+
+.section3 .gif-div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: inherit;
 }
 
 .section4 {
@@ -490,17 +574,6 @@ header nav ul li:not(:last-child) {
   width: 63%;
 }
 
-.section4 .con-part button {
-  width: 160px;
-  padding: 16px;
-  background: #fff;
-  border-radius: 15px;
-  color: #005FFF;
-  border: 1px solid silver;
-  font-size: 1.6rem;
-  font-family: 'Mont-semibold';
-}
-
 .section5 {
   min-height: 150vh;
   background-color: #eefbff;
@@ -519,6 +592,8 @@ header nav ul li:not(:last-child) {
           align-items: center;
   margin-top: 5.3rem;
   position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .section5 .center-text h1 {
@@ -537,6 +612,8 @@ header nav ul li:not(:last-child) {
   width: 50px;
   height: 50px;
   position: absolute;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .section5 .center-text .img img {
