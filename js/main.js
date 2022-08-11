@@ -1,12 +1,16 @@
 const section2 = document.querySelector('.section2');
 const section5 = document.querySelector('.section5');
+const section7 = document.querySelector('.section7');
 const s2imgdiv = document.querySelectorAll('.section2 .img');
 const s5imgdiv = document.querySelectorAll('.section5 .img');
+const s7imgdiv = document.querySelectorAll('.section7 .img');
 const s2con = document.querySelector('.section2 .content');
 const s5con = document.querySelector('.section5 .center-text');
+const s7con = document.querySelector('.section7 .content');
 const s3rvlgif = document.querySelectorAll('.section3 .scroll h3');
 const gifCon = document.querySelector('.section3 .gif-div img');
 const gifCondiv = document.querySelector('.section3 .gif-div');
+const h3tab = document.querySelectorAll('.section5 .tab-btn h3');
 const giflist = ['gif/attitude.gif', 'gif/gif2.gif', 'gif/gif3.gif', 'gif/gif4.gif']
 
 //confetti falling
@@ -89,6 +93,11 @@ section5.addEventListener('mousemove', (e)=>{
   let [x,y] = values;
   moveElement(x,y,s5con);
 });
+section7.addEventListener('mousemove', (e)=>{
+  let values = moveSection(e);
+  let [x,y] = values;
+  moveElement(x,y,s7con);
+});
 
 function moveSection(e){
   e.stopPropagation();
@@ -112,6 +121,16 @@ s2imgdiv.forEach(function(img){
 });
 
 s5imgdiv.forEach(function(img){
+  img.addEventListener('mousemove', function (e){
+    moveImg(e,this);
+  })
+
+  img.addEventListener('mouseout',function (){
+    steadyImg(this);
+  }) 
+});
+
+s7imgdiv.forEach(function(img){
   img.addEventListener('mousemove', function (e){
     moveImg(e,this);
   })
@@ -251,3 +270,39 @@ ScrollTrigger.create({
   pinSpacing: true,
   pin: false
 })
+
+h3tab.forEach((tabh3,ind)=>{
+  tabh3.addEventListener('mouseenter',(e)=>{
+    let activeh3 = e.target.closest('.tab-btn').querySelector('h3.active');
+    let allh3 = e.target.closest('.tab-btn').querySelectorAll('h3');
+    let imgBox = e.target.closest('.tab-div').querySelectorAll('.con .img-box');
+    let imgs = imgBox[ind].querySelectorAll('img');
+    activeh3.classList.remove('active');
+    allh3[ind].classList.add('active');
+    
+    new hoverEffect({
+      parent: imgBox[ind],
+      intensity: 0.2,
+      image1: imgs[0].getAttribute('src'),
+      image2: imgs[1].getAttribute('src'),
+      easing: Expo.easeOut,
+      displacementImage: 'images/Distorsion/10.jpg'
+    });
+  })
+})
+
+// section 6 animated
+//confetti falling
+var confettiSettings = { 
+  target: 'confetti2',
+  max: 15,
+  size: 1.8,
+  clock: 11,
+  respawn: true,
+  props: ['circle', 'circle', 'circle', 'line'],
+  colors: [[165,104,246],[230,61,135],[0,199,228],[253,214,126]],
+  start_from_edge: true,
+  rotate: false
+};
+var confetti2 = new ConfettiGenerator(confettiSettings);
+confetti2.render();

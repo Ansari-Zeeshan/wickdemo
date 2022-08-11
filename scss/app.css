@@ -685,17 +685,28 @@ header nav ul li:not(:last-child) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
-.section5 .tab-div .tab-con .con img {
+.section5 .tab-div .tab-con .con .img-box {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 65%;
   height: 100%;
   margin-left: 15%;
+  border-radius: 50px;
+}
+
+.section5 .tab-div .tab-con .con .img-box img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
   border-radius: 50px;
+  display: none;
 }
 
 .section5 .tab-div .tab-btn {
@@ -724,6 +735,8 @@ header nav ul li:not(:last-child) {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   opacity: 0.5;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .section5 .tab-div .tab-btn h3 img {
@@ -739,6 +752,7 @@ header nav ul li:not(:last-child) {
 
 .section6 {
   min-height: 110vh;
+  position: relative;
 }
 
 .section6 .center-text {
@@ -784,10 +798,21 @@ header nav ul li:not(:last-child) {
   width: 80%;
 }
 
+.section6 #confetti2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+}
+
 .section7 {
   margin-top: 12rem;
   background: #fdf0e5;
   min-height: 100vh;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -830,6 +855,8 @@ header nav ul li:not(:last-child) {
   position: absolute;
   width: 38px;
   height: 38px;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .section7 .content .img img {
