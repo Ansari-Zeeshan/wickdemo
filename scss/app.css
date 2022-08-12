@@ -58,6 +58,10 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -173,6 +177,11 @@ ul {
   color: #005FFF;
 }
 
+section {
+  position: relative;
+  z-index: 1;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -242,6 +251,7 @@ header nav ul li:not(:last-child) {
 .banner {
   min-height: 85vh;
   position: relative;
+  background-color: #fff;
 }
 
 .banner .banner-text {
@@ -328,7 +338,7 @@ header nav ul li:not(:last-child) {
 }
 
 .section2 {
-  margin-top: 12rem;
+  padding-top: 8rem;
   background: #fdf0e5;
   min-height: 100vh;
   display: -webkit-box;
@@ -516,6 +526,7 @@ header nav ul li:not(:last-child) {
 .section4 {
   min-height: 85vh;
   padding-top: 10rem;
+  background-color: #fff;
 }
 
 .section4 .img-div {
@@ -753,6 +764,7 @@ header nav ul li:not(:last-child) {
 .section6 {
   min-height: 110vh;
   position: relative;
+  background-color: #fff;
 }
 
 .section6 .center-text {
@@ -766,6 +778,7 @@ header nav ul li:not(:last-child) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .section6 .center-text h1 {
@@ -778,6 +791,45 @@ header nav ul li:not(:last-child) {
   color: #2128BD;
   line-height: 1.1;
   margin: auto;
+  position: relative;
+}
+
+.section6 .center-text .t {
+  position: absolute;
+  font-weight: 600;
+  --shade: #333;
+  letter-spacing: 2px;
+  -webkit-transition: 1.5s ease;
+  transition: 1.5s ease;
+}
+
+.section6 .center-text .t1 {
+  position: relative;
+}
+
+.section6 .center-text .t2 {
+  --size: 100px;
+  -webkit-clip-path: circle(var(--size) at 0 0);
+          clip-path: circle(var(--size) at 0 0);
+  color: #44c4ff;
+}
+
+.section6 .center-text .t3 {
+  --size: 100px;
+  -webkit-clip-path: circle(var(--size) at 91% 0);
+          clip-path: circle(var(--size) at 91% 0);
+  color: #FFCC57;
+}
+
+.section6 .center-text .t4 {
+  --size: 100px;
+  -webkit-clip-path: circle(var(--size) at 50% 120%);
+          clip-path: circle(var(--size) at 50% 120%);
+  color: #FFE5E3;
+}
+
+.section6 .center-text .t4:hover {
+  --size: 250px;
 }
 
 .section6 .con-div h4 {
@@ -808,7 +860,7 @@ header nav ul li:not(:last-child) {
 }
 
 .section7 {
-  margin-top: 12rem;
+  padding-top: 12rem;
   background: #fdf0e5;
   min-height: 100vh;
   -webkit-transition: all 0.2s ease;
@@ -910,6 +962,7 @@ header nav ul li:not(:last-child) {
 
 .section8 {
   min-height: 100vh;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1062,5 +1115,89 @@ header nav ul li:not(:last-child) {
   top: 150px;
   left: 8%;
   z-index: 3;
+}
+
+.footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  min-height: 100vh;
+  background-color: #ECF1FD;
+  z-index: -4;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.footer .container {
+  position: relative;
+}
+
+.footer .center_part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.footer .center_part h1 {
+  font-size: 7rem;
+  letter-spacing: -5px;
+  width: 50%;
+  font-family: Mont-semibold;
+  color: #2128BD;
+  line-height: 1.1;
+  margin-bottom: 6rem;
+}
+
+.footer .center_part button {
+  width: 162px;
+  padding: 1.7rem;
+  background: transparent;
+  border-radius: 17px;
+  color: #878EDD;
+  border: 1px solid #ADCBFF;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2.5rem;
+}
+
+.footer .bottom {
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+}
+
+.footer .bottom h3 {
+  font-family: Mont-semibold;
+  font-size: 2.85rem;
+  text-transform: lowercase;
+  letter-spacing: -0.1rem;
+  color: #2128BD;
+  margin-bottom: 1.1rem;
+}
+
+.footer .bottom h4 {
+  color: #2128BD;
+  font-family: Mont-norm;
 }
 /*# sourceMappingURL=app.css.map */

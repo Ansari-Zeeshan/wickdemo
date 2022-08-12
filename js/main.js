@@ -11,6 +11,9 @@ const s3rvlgif = document.querySelectorAll('.section3 .scroll h3');
 const gifCon = document.querySelector('.section3 .gif-div img');
 const gifCondiv = document.querySelector('.section3 .gif-div');
 const h3tab = document.querySelectorAll('.section5 .tab-btn h3');
+const t2 = document.querySelector('.section6 .center-text .t2');
+const t3 = document.querySelector('.section6 .center-text .t3');
+const s6ctext = document.querySelector('.section6 .center-text .t1');
 const giflist = ['gif/attitude.gif', 'gif/gif2.gif', 'gif/gif3.gif', 'gif/gif4.gif']
 
 //confetti falling
@@ -306,3 +309,41 @@ var confettiSettings = {
 };
 var confetti2 = new ConfettiGenerator(confettiSettings);
 confetti2.render();
+
+t2.addEventListener('mouseenter', (e)=>{
+  let t3 = e.target.parentNode.querySelector('.t3');
+  fillColor(t3);
+});
+t2.addEventListener('mouseleave', (e)=>{
+  let t3 = e.target.parentNode.querySelector('.t3');
+  outColor(t3);
+});
+t3.addEventListener('mouseenter', (e)=>{
+  let t2 = e.target.parentNode.querySelector('.t2');
+  fillColor(t2);
+});
+t3.addEventListener('mouseleave', (e)=>{
+  let t2 = e.target.parentNode.querySelector('.t2');
+  outColor(t2);
+});
+function fillColor(t){
+  t.style.cssText=`--size: 350px`;
+}
+function outColor(t){
+  t.style.cssText=`--size: 100px`;
+}
+s6ctext.addEventListener('mouseenter', fillColorAll);
+s6ctext.addEventListener('mouseleave', outColorAll);
+
+function fillColorAll(e){
+  let allT  = e.target.closest('.section6').querySelectorAll('.t');
+  allT.forEach((all)=>{
+    all.style.cssText=`--size: 250px`;
+  })
+}
+function outColorAll(e){
+  let allT  = e.target.closest('.section6').querySelectorAll('.t');
+  allT.forEach((all)=>{
+    all.style.cssText=`--size: 100px`;
+  })
+}
